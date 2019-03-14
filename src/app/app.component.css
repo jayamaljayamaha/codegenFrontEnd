@@ -1,0 +1,16 @@
+.back{
+  height: 150vh;
+  /*background-size: contain, cover;*/
+  /*background-repeat: no-repeat;*/
+  background-image: url("../assets/images/backImage1.jpg");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+.routerBody{
+  float: right;
+  width: 85%;
+  height: 100%;
+  margin-top: 100px;
+  /*background-color: yellow;*/
+}

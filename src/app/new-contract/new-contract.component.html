@@ -1,0 +1,82 @@
+
+<mat-card class="displayArea">
+  <div class="headerArea">
+    <h1>New Contract</h1>
+  </div>
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="Hotel Name" [(ngModel)]="hotelName" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker1" placeholder="Contract Start Date" [(ngModel)]="contractStartDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker1">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker2" placeholder="Contract End Date" [(ngModel)]="contractEndDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker2">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <div class="row">
+      <div class="col-sm-4">
+        <mat-form-field>
+          <input matInput placeholder="Room Type" [(ngModel)]="roomType">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field>
+          <input matInput placeholder="Price" [(ngModel)]="price">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-2">
+        <mat-form-field>
+          <input matInput placeholder="No Of Rooms" [(ngModel)]="noRooms">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-2">
+        <mat-form-field>
+          <input matInput placeholder="No Of addults" [(ngModel)]="noAdults">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-1">
+        <button (click)="onClick()"  class="btn btn-success"><mat-icon>library_add</mat-icon></button>
+      </div>
+    </div>
+    <br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="Room Type">
+        <th mat-header-cell *matHeaderCellDef> Room Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.roomType}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="No Of Rooms">
+        <th mat-header-cell *matHeaderCellDef> No Of Rooms </th>
+        <td mat-cell *matCellDef="let element"> {{element.noOfRooms}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="No Of addults">
+        <th mat-header-cell *matHeaderCellDef>Max addults </th>
+        <td mat-cell *matCellDef="let element"> {{element.maxAdults}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <button (click)="makeNewContract()" class="btn btn-success buttonSubmit">Submit</button>
+
+  </div>
+</mat-card>
+

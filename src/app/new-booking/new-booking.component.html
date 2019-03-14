@@ -1,0 +1,128 @@
+
+<mat-card class="displayArea">
+  <div class="headerArea">
+    <h1>New Booking</h1>
+  </div>
+  <div class="example-container">
+
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker1" placeholder="Check In Date" [(ngModel)]="checkInDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker1">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="No of Nights" [(ngModel)]="noOfNights" required>
+      </mat-form-field>
+      <br>
+      <div class="row">
+        <div class="col-sm-5">
+          <mat-form-field>
+            <input matInput placeholder="No Of Rooms" [(ngModel)]="noRooms" >
+          </mat-form-field>
+        </div>
+        <div class="col-sm-5">
+          <mat-form-field>
+            <input matInput placeholder="No Of addults" [(ngModel)]="noAdults" >
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+          <button (click)="onClick()"  class="btn btn-success"><mat-icon>library_add</mat-icon></button>
+        </div>
+      </div>
+      <br>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="No Of Rooms">
+          <th mat-header-cell *matHeaderCellDef> No Of Rooms </th>
+          <td mat-cell *matCellDef="let element"> {{element.noOfRooms}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="No Of addults">
+          <th mat-header-cell *matHeaderCellDef>No Of addults </th>
+          <td mat-cell *matCellDef="let element"> {{element.noOfAdults}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <button (click)="Submit()" class="btn btn-success buttonSubmit">Submit</button>
+
+  </div>
+</mat-card>
+
+<mat-card class="displayArea2" *ngIf="show">
+  <div class="headerArea2">
+    <h2>Booking Details</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <mat-list>
+        <mat-list-item>Hotel Name</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-7">
+      <mat-list>
+        <mat-list-item>{{hotelName}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <mat-list>
+        <mat-list-item>Room Types</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-7">
+      <mat-list>
+        <mat-list-item>{{roomTypes}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <mat-list>
+        <mat-list-item>Price</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-7">
+      <mat-list>
+        <mat-list-item>{{price}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <mat-list>
+        <mat-list-item>Availability</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-7">
+      <mat-list>
+        <mat-list-item>{{Availability}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+
+</mat-card>

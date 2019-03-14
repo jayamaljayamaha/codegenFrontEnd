@@ -1,0 +1,30 @@
+.content{
+  background-color:#126D88;
+  opacity: 0.8;
+  float: left;
+  width: 15%;
+  height: 100%;
+  color: white;
+}
+
+.routingButtons{
+  margin-top: 80%;
+  padding: 10px;
+}
+.sidNavButtons{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+
+  font-size: 25px;
+}
+.mat-list-item{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.sidNavButtons a{
+  color: white;
+}
+.sidNavButtons a:hover{
+  text-decoration: none;
+}

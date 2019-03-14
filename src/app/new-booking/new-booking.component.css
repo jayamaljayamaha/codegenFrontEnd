@@ -1,0 +1,51 @@
+
+
+.displayArea{
+  padding: 0;
+  width: 70%;
+  margin: auto;
+  opacity: 0.9;
+  background-color: white ;
+}
+.example-container{
+  width: 80%;
+  margin: 100px auto;
+}
+.mat-form-field{
+  width: 100%;
+}
+.headerArea{
+  color: white;
+  height: 100px;
+  background-color: #126D88;
+  text-align: center;
+}
+.buttonSubmit{
+  alignment: bottom;
+  margin-top: 200px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.mat-table{
+  width: 100%;
+}
+
+
+.displayArea2{
+  padding: 0;
+  width: 70%;
+  margin: 50px auto;
+  opacity: 0.9;
+  background-color: white ;
+}
+.headerArea2{
+  color: white;
+  height: 60px;
+  background-color: #126D88;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.displayArea2 .row{
+  width: 90%;
+  margin: auto;
+}
